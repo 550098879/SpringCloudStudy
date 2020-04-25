@@ -2,6 +2,7 @@ package org.zyx.controller;
 
 import com.netflix.discovery.converters.Auto;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 import org.zyx.entity.Student;
 import org.zyx.repository.StudentRepository;
@@ -13,10 +14,14 @@ import java.util.Collection;
  */
 @RestController
 @RequestMapping("/student")
+@CrossOrigin   //实现可跨域访问
 public class StudentHandler {
 
     @Autowired
     private StudentRepository studentRepository;
+
+    @Value("${server.port}")
+    private String port;
 
     @GetMapping("/findAll")
     public Collection<Student> findAll(){
@@ -33,16 +38,19 @@ public class StudentHandler {
         studentRepository.saveOrUpdate(student);
     }
 
-    @PostMapping("/update")
+    @PutMapping("/update")
     public void update(@RequestBody Student student){
         studentRepository.saveOrUpdate(student);
     }
 
-    @PutMapping("/deleteById/{id}")
+    @DeleteMapping("/deleteById/{id}")
     public void deleteById(@PathVariable("id") Long id){
         studentRepository.deleteById(id);
     }
 
-
+    @GetMapping("/index")
+    public String index(){
+        return "当前端口:"+this.port;
+    }
 
 }

@@ -10,15 +10,25 @@
         <module name="Consumer" />
         <module name="EurekaClient" />
         <module name="EurekaServer" />
+        <module name="Feign" />
+        <module name="Hastrix" />
+        <module name="Hystrix" />
         <module name="RestTemplate" />
+        <module name="Ribbon" />
+        <module name="Zuul" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Consumer" target="1.8" />
       <module name="EurekaClient" target="1.8" />
       <module name="EurekaServer" target="1.8" />
+      <module name="Feign" target="1.8" />
+      <module name="Hastrix" target="1.8" />
+      <module name="Hystrix" target="1.8" />
       <module name="RestTemplate" target="1.8" />
+      <module name="Ribbon" target="1.8" />
       <module name="SpringCloud_1" target="1.8" />
+      <module name="Zuul" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

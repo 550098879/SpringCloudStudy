@@ -13,6 +13,11 @@
         <module>EurekaClient</module>
         <module>RestTemplate</module>
         <module>Consumer</module>
+        <module>Zuul</module>
+        <module>Ribbon</module>
+        <module>Feign</module>
+        <module>Hastrix</module>
+        <module>Hystrix</module>
     </modules>
 
     <!--父依赖-->

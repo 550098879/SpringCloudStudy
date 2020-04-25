@@ -12,6 +12,7 @@ import java.util.Collection;
  */
 @RestController
 @RequestMapping("/consumer")
+@CrossOrigin   //实现可跨域访问
 public class ComsumerHandler {
 
     @Autowired
@@ -36,17 +37,17 @@ public class ComsumerHandler {
          * 参数传递在getObject()类型后面追加
          * 参数请看源码
          */
-//        return restTemplate.getForObject("url",Student.class,id).getBody();
+//        return restTemplate.getForEntity("url",Student.class,id).getBody();
         return restTemplate.getForObject("http://localhost:8010/student/findById/{id}",Student.class,id);
     }
 
     @PostMapping("/save")
     public void save(@RequestBody Student student){
-//        restTemplate.postForObject("url",student,null).getBody();
         /**
-         * postForObject()方法的传参是直接在url后添加,返回值则填写null
+         * postForObject()方法的传参是直接在url后添加,返回值空则填写Object.class
          */
-        restTemplate.postForObject("http://localhost:8010/student/save",student,null);
+        restTemplate.postForObject("http://localhost:8010/student/save",student,Object.class);
+//        restTemplate.postForEntity("http://localhost:8010/student/save",student,null).getBody();
     }
 
     @PutMapping("/update")
@@ -59,7 +60,9 @@ public class ComsumerHandler {
     }
 
     @DeleteMapping("/deleteById/{id}")
-    public void deleteById(@PathVariable("id") Long id){
+    public void deleteById(@PathVariable("id") long id){
+        //删除操作出现跨域异常,后续解决...
+        //解决:服务提供者中的删除方法用的是PutMapping,导致找不到请求路径,注意请求的方法必须一致
         restTemplate.delete("http://localhost:8010/student/deleteById/{id}",id);
     }
 

@@ -232,3 +232,9 @@ public class ConsumerApplication {
 - 项目的启动顺序依次为:注册中心→服务提供者→服务消费者
 - Rest风格,基于RestTemplate,SpringBoot已经集成了RestTemplate
 - 在创建启动类的时候使用@Bean将RestTemplate注入到IOC容器中
+
+###出现的问题  
+- 删除操作出现跨域异常
+   解决:服务提供者中的删除方法用的是PutMapping,导致找不到请求路径,注意请求的方法必须一致  
+- save方法出现responseType不能为null的问题,使用Object.class作为返回值即可
+      
