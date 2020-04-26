@@ -1283,6 +1283,11 @@ spring:
     <artifactId>spring-cloud-config-server</artifactId>
     <version>2.0.2.RELEASE</version>
   </dependency>
+  <dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+    <version>2.0.2.RELEASE</version>
+  </dependency>
 </dependencies>
 ```
 

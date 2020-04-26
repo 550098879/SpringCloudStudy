@@ -1,0 +1,18 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: configserver
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/550098879/SpringCloudStudy.git
+          searchPaths: config
+          username : 填写自己的登陆名
+          password : 登陆密码
+      lable: master
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/

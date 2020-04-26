@@ -20,6 +20,10 @@
         <module>Hystrix</module>
         <module>NativeConfigServer</module>
         <module>NativeConfigClient</module>
+        <module>ConfigServer</module>
+        <module>ConfigClient</module>
+        <module>Zipkin</module>
+        <module>ZipkinClient</module>
     </modules>
 
     <!--父依赖-->
