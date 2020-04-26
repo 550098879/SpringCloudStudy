@@ -1,0 +1,15 @@
+#名字和前端框架一样
+#用于读取本地的配置信息
+spring:
+  application:
+    name: configclient
+  profiles:
+    active: dev
+  cloud:
+    config:
+      uri: http://localhost:8762
+      fail-fast: true
+
+#`cloud.config.uri`：本地 Config Server 的访问路径
+#`cloud.config.fail-fase`：设置客户端优先判断 Config Server 获取是否正常。
+#通过`spring.application.name` 结合`spring.profiles.active`拼接目标配置文件名，configclient-dev.yml，去 Config Server 中查找该文件。

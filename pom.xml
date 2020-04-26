@@ -18,6 +18,8 @@
         <module>Feign</module>
         <module>Hastrix</module>
         <module>Hystrix</module>
+        <module>NativeConfigServer</module>
+        <module>NativeConfigClient</module>
     </modules>
 
     <!--父依赖-->

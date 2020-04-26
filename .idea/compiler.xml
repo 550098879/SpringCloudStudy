@@ -13,6 +13,8 @@
         <module name="Feign" />
         <module name="Hastrix" />
         <module name="Hystrix" />
+        <module name="NativeConfigClient" />
+        <module name="NativeConfigServer" />
         <module name="RestTemplate" />
         <module name="Ribbon" />
         <module name="Zuul" />
@@ -25,6 +27,8 @@
       <module name="Feign" target="1.8" />
       <module name="Hastrix" target="1.8" />
       <module name="Hystrix" target="1.8" />
+      <module name="NativeConfigClient" target="1.8" />
+      <module name="NativeConfigServer" target="1.8" />
       <module name="RestTemplate" target="1.8" />
       <module name="Ribbon" target="1.8" />
       <module name="SpringCloud_1" target="1.8" />
